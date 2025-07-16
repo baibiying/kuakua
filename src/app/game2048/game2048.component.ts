@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-game2048',
   standalone: true,
   templateUrl: './game2048.component.html',
-  styleUrl: './game2048.component.css'
+  styleUrl: './game2048.component.css',
+  imports: [CommonModule]
 })
 export class Game2048Component {
   // 4x4 网格

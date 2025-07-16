@@ -1,56 +1,92 @@
+body, .g2048-container {
+  background: #f9f6e7;
+}
 .g2048-container {
-  max-width: 420px;
-  margin: 60px auto 0 auto;
-  padding: 32px 20px 28px 20px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 16px 0 rgba(124,58,237,0.08);
+  max-width: 500px;
+  margin: 32px auto 0 auto;
+  padding: 24px 12px 24px 12px;
+  background: #f9f6e7;
+  border-radius: 12px;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   outline: none;
 }
+.g2048-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
 .g2048-title {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: #7c3aed;
-  margin-bottom: 18px;
+  color: #7c736a;
+  letter-spacing: 2px;
+  background: #ede0c8;
+  border-radius: 8px;
+  padding: 16px 32px;
+  margin: 0;
 }
-.g2048-score {
-  font-size: 1.1rem;
-  color: #f472b6;
-  margin-bottom: 18px;
-}
-.g2048-grid {
+.g2048-score-box {
+  background: #bbada0;
+  border-radius: 10px;
+  padding: 10px 36px 6px 36px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  min-width: 100px;
+}
+.g2048-score-label {
+  color: #f9f6f2;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+.g2048-score-value {
+  color: #fff;
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+.g2048-grid {
+  background: #bbada0;
+  border-radius: 20px;
+  padding: 20px;
   margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(4, 70px);
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  /* 移除width和height，防止溢出 */
+  box-sizing: border-box;
 }
 .g2048-row {
-  display: flex;
-  gap: 8px;
+  display: contents;
 }
 .g2048-cell {
-  width: 60px;
-  height: 60px;
-  background: #ede9fe;
-  border-radius: 8px;
+  width: 70px;
+  height: 70px;
+  background: #cdc1b4;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #7c3aed;
-  transition: background 0.2s;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #776e65;
+  transition: background 0.2s, color 0.2s;
+  box-sizing: border-box;
+  user-select: none;
 }
-.g2048-cell:not(:empty) {
-  background: #a78bfa;
-  color: #fff;
-}
+/* 数字块不同分值可加不同背景色，这里先保证全部显示 */
 .g2048-reset {
   background: #f3f4f6;
-  color: #7c3aed;
+  color: #7c736a;
   border: none;
   border-radius: 999px;
   padding: 8px 28px;
@@ -59,12 +95,84 @@
   cursor: pointer;
   margin-top: 8px;
   transition: background 0.2s;
+  box-shadow: 0 1px 2px #bbada0;
 }
 .g2048-reset:hover {
-  background: #ede9fe;
+  background: #ede0c8;
 }
-.g2048-tip {
-  color: #64748b;
-  font-size: 0.98rem;
-  margin-top: 10px;
+.g2048-keyboard-hint {
+  color: #7c736a;
+  font-size: 1.15rem;
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-family: inherit;
+}
+.g2048-key {
+  display: inline-block;
+  background: #ede0c8;
+  color: #7c736a;
+  border-radius: 8px;
+  border: 1.5px solid #bbada0;
+  padding: 2px 12px 2px 12px;
+  margin: 0 2px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  min-width: 28px;
+  min-height: 28px;
+  text-align: center;
+  box-shadow: 0 1px 1px #e0c9a6;
+  line-height: 1.6;
+  vertical-align: middle;
+}
+.cell-2 {
+  background: #eee4da;
+  color: #776e65;
+}
+.cell-4 {
+  background: #ede0c8;
+  color: #776e65;
+}
+.cell-8 {
+  background: #f2b179;
+  color: #f9f6f2;
+}
+.cell-16 {
+  background: #f59563;
+  color: #f9f6f2;
+}
+.cell-32 {
+  background: #f67c5f;
+  color: #f9f6f2;
+}
+.cell-64 {
+  background: #f65e3b;
+  color: #f9f6f2;
+}
+.cell-128 {
+  background: #edcf72;
+  color: #f9f6f2;
+  font-size: 2rem;
+}
+.cell-256 {
+  background: #edcc61;
+  color: #f9f6f2;
+  font-size: 2rem;
+}
+.cell-512 {
+  background: #edc850;
+  color: #f9f6f2;
+  font-size: 2rem;
+}
+.cell-1024 {
+  background: #edc53f;
+  color: #f9f6f2;
+  font-size: 1.7rem;
+}
+.cell-2048 {
+  background: #edc22e;
+  color: #f9f6f2;
+  font-size: 1.7rem;
 } 
