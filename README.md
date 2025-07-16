@@ -1,5 +1,22 @@
 # Kuakua
 
+## 产品截图
+
+### 主页
+![2048演示](src/assets/2048-demo.png)
+
+### Games 页面
+![Games页面](src/assets/games-page.png)
+
+### 2048
+![2048演示](src/assets/2048-demo.png)
+
+### 消消乐
+![消消乐演示](src/assets/match3-demo.png)
+
+### 色觉测试
+![色觉测试演示](src/assets/color-demo.png)
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
 
 ## Development server
