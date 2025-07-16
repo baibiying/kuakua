@@ -11,6 +11,36 @@ import { CommonModule } from '@angular/common';
 })
 export class GamesComponent {
   games = [
+    // 已开发小游戏
+    {
+      title: '消消乐',
+      desc: '交换相邻动物头像，三个及以上相同即可消除，挑战高分！',
+      icon: '🧩',
+      link: '/games/clicking',
+      comingSoon: false
+    },
+    {
+      title: '2048',
+      desc: '经典数字合成游戏，挑战你的极限！',
+      icon: '🔢',
+      link: '/games/2048',
+      comingSoon: false
+    },
+    {
+      title: '色觉测试',
+      desc: '在一组色块中找出颜色不同的那一块，挑战你的色觉极限！',
+      icon: '🌈',
+      link: '/games/color-test',
+      comingSoon: false
+    },
+    {
+      title: '夸夸数数',
+      desc: '点击按钮，每数一次都收获一句夸夸！',
+      icon: '🔢',
+      link: '/games/counting',
+      comingSoon: false
+    },
+    // 敬请期待小游戏
     {
       title: '夸夸弹幕',
       desc: '在屏幕上发射你的夸夸弹幕，收获温暖和快乐！',
@@ -45,34 +75,6 @@ export class GamesComponent {
       icon: '🧧',
       link: '#',
       comingSoon: true
-    },
-    {
-      title: '夸夸数数',
-      desc: '点击按钮，每数一次都收获一句夸夸！',
-      icon: '🔢',
-      link: '/games/counting',
-      comingSoon: false
-    },
-    {
-      title: '消消乐',
-      desc: '交换相邻动物头像，三个及以上相同即可消除，挑战高分！',
-      icon: '🧩',
-      link: '/games/clicking',
-      comingSoon: false
-    },
-    {
-      title: '2048',
-      desc: '经典数字合成游戏，挑战你的极限！',
-      icon: '🔢',
-      link: '/games/2048',
-      comingSoon: false
-    },
-    {
-      title: '色觉测试',
-      desc: '在一组色块中找出颜色不同的那一块，挑战你的色觉极限！',
-      icon: '🌈',
-      link: '/games/color-test',
-      comingSoon: false
     }
   ];
 } 
