@@ -1,0 +1,14 @@
+<div class="games-page">
+  <img src="assets/game-logo.png" alt="夸夸Logo" class="games-logo" />
+  <h1 class="games-main-title">夸夸小游戏</h1>
+  <div class="games-subtitle">有趣的夸夸小游戏，点击进入体验</div>
+  <div class="games-grid">
+    <div class="game-card" *ngFor="let game of games">
+      <div class="game-icon">{{ game.icon }}</div>
+      <div class="game-title">{{ game.title }}</div>
+      <div class="game-desc">{{ game.desc }}</div>
+      <a *ngIf="!game.comingSoon" class="game-link" [routerLink]="game.link">进入</a>
+      <span *ngIf="game.comingSoon" class="game-link game-link-disabled">敬请期待</span>
+    </div>
+  </div>
+</div> 

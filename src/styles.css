@@ -1,0 +1,173 @@
+html, body {
+  background: #f7efd7 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+.kk-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+}
+.kk-header {
+  margin-top: 48px;
+  text-align: center;
+}
+.kk-logo {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 12px;
+}
+.kk-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #7c3aed;
+  margin: 0 0 8px 0;
+}
+.kk-desc {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+.kk-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.kk-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px 0 rgba(124,58,237,0.08);
+  padding: 40px 32px 32px 32px;
+  min-width: 320px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.kk-quote {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 32px;
+  min-height: 48px;
+  text-align: center;
+  line-height: 1.7;
+}
+.kk-btn {
+  background: linear-gradient(90deg, #a78bfa 0%, #f472b6 100%);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(124,58,237,0.10);
+  transition: background 0.2s, transform 0.1s;
+}
+.kk-btn:hover {
+  background: linear-gradient(90deg, #f472b6 0%, #a78bfa 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+.kk-footer {
+  text-align: center;
+  color: #a3a3a3;
+  font-size: 0.95rem;
+  margin: 32px 0 16px 0;
+}
+.kk-glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  background: transparent;
+  opacity: 0.55;
+  mix-blend-mode: lighten;
+  transition: background 0.15s, opacity 0.2s;
+}
+.kk-cursor-glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #fff 0%, #ff4d4d 18%, #ffe94d 36%, #4dff4d 54%, #4d6cff 72%, #b84dff 88%, transparent 100%);
+  box-shadow: 0 0 32px 16px rgba(167,139,250,0.18), 0 0 64px 32px rgba(244,114,182,0.12);
+  opacity: 0;
+  filter: blur(1.2px) url(#liquid-glow);
+  z-index: 1000;
+  transition: background 0.2s, opacity 0.3s;
+}
+.kk-mouse-canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  background: transparent;
+  display: block;
+}
+.main-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: auto;
+  background: transparent;
+  box-shadow: none;
+  z-index: 2000;
+  padding: 16px 24px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  pointer-events: none;
+}
+.nav-link {
+  display: inline-block;
+  background: linear-gradient(90deg, #a78bfa 0%, #f472b6 100%);
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 28px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 12px;
+  box-shadow: 0 2px 8px 0 rgba(124,58,237,0.10);
+  transition: background 0.2s, transform 0.1s;
+  pointer-events: auto;
+  /* 不要有 float、position: absolute/fixed */
+}
+.nav-link.active {
+  filter: brightness(0.85);
+  pointer-events: none;
+  cursor: default;
+}
+.liquid-glow-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+@media (max-width: 600px) {
+  .kk-card {
+    padding: 24px 8px 20px 8px;
+    min-width: 0;
+  }
+  .kk-header {
+    margin-top: 24px;
+  }
+  .main-nav {
+    padding: 0 4px;
+  }
+}

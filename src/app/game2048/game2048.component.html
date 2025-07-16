@@ -1,0 +1,11 @@
+<div class="g2048-container" tabindex="0" (keydown)="handleKey($event)">
+  <h2 class="g2048-title">2048小游戏</h2>
+  <div class="g2048-score">分数：{{ score }}</div>
+  <div class="g2048-grid">
+    <div class="g2048-row" *ngFor="let row of grid">
+      <div class="g2048-cell" *ngFor="let cell of row">{{ cell !== 0 ? cell : '' }}</div>
+    </div>
+  </div>
+  <button class="g2048-reset" (click)="reset()">重置</button>
+  <div class="g2048-tip">用键盘方向键操作</div>
+</div> 

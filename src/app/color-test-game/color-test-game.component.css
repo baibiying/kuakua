@@ -1,0 +1,128 @@
+body, .color-test-bg {
+  background: #f7efd7 !important;
+}
+.color-test-bg {
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.color-test-header {
+  margin-top: 48px;
+  margin-bottom: 18px;
+  background: #ede2b9;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px 0 rgba(124,58,237,0.08);
+  padding: 18px 32px 12px 32px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 1.1rem;
+}
+.ct-badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-right: 6px;
+}
+.ct-level { background: #ffb3b3; color: #a33; }
+.ct-color { background: #7fffd4; color: #0a6; }
+.ct-grid { background: #eab308; color: #7c3aed; }
+.ct-timer { background: #fff; color: #f43f5e; font-weight: 700; }
+.color-test-title {
+  font-size: 1.35rem;
+  color: #444;
+  margin-bottom: 18px;
+  margin-top: 0;
+  font-weight: 600;
+}
+.color-test-card {
+  background: #ede2b9;
+  border-radius: 32px;
+  box-shadow: 0 8px 32px 0 rgba(124,58,237,0.10);
+  padding: 36px 36px 32px 36px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.color-test-grid {
+  display: grid;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+.color-test-block {
+  width: 140px;
+  height: 140px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.1s;
+  box-shadow: 0 2px 8px 0 rgba(124,58,237,0.08);
+  background: #7ddcff;
+}
+.color-test-block.odd-block {
+  background: #039be5;
+}
+.color-test-block:active {
+  transform: scale(0.96);
+}
+.color-test-progress-label {
+  color: #444;
+  font-size: 1.08rem;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.color-test-progress-bar {
+  width: 320px;
+  height: 10px;
+  background: #f3e8ff;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+.color-test-progress-inner {
+  height: 100%;
+  background: linear-gradient(90deg, #a78bfa 0%, #f472b6 100%);
+  border-radius: 8px;
+  transition: width 0.3s;
+}
+.color-test-progress-num {
+  color: #444;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.color-test-block.sky { background: #7ddcff; }
+.color-test-block.sky.odd-block { background: #039be5; }
+.color-test-block.pink { background: #ffb3de; }
+.color-test-block.pink.odd-block { background: #e75480; }
+.color-test-block.green { background: #a8ffb3; }
+.color-test-block.green.odd-block { background: #1fa152; }
+.color-test-block.yellow { background: #fff7b3; }
+.color-test-block.yellow.odd-block { background: #e5c100; }
+.color-test-block.purple { background: #e0b3ff; }
+.color-test-block.purple.odd-block { background: #7c3aed; }
+.color-test-block.orange { background: #ffd6b3; }
+.color-test-block.orange.odd-block { background: #ff8800; }
+@media (max-width: 600px) {
+  .color-test-header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px 8px 8px;
+    font-size: 0.98rem;
+  }
+  .color-test-card {
+    padding: 16px 2px 12px 2px;
+  }
+  .color-test-progress-bar {
+    width: 98vw;
+    min-width: 0;
+  }
+} 

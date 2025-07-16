@@ -1,0 +1,19 @@
+<div class="color-test-bg">
+  <div class="color-test-header">
+    <span class="ct-badge ct-level">等级: {{ score + 1 }}</span>
+    <span class="ct-badge ct-color">颜色: {{ colorNameMap[currentColorClass] || currentColorClass }}</span>
+    <span class="ct-badge ct-grid">网格: {{ gridSize }}x{{ gridSize }}</span>
+    <span class="ct-badge ct-timer">⏱️ {{ timer }}</span>
+  </div>
+  <h2 class="color-test-title">测试您的颜色敏感度</h2>
+  <div class="color-test-card">
+    <div class="color-test-grid" [style.gridTemplateColumns]="'repeat(' + gridSize + ', 1fr)'">
+      <button class="color-test-block" *ngFor="let block of blocks; let i = index" [ngClass]="[currentColorClass, block.isOdd ? 'odd-block' : '']" (click)="pick(i)"></button>
+    </div>
+  </div>
+  <div class="color-test-progress-label">难度进度</div>
+  <div class="color-test-progress-bar">
+    <div class="color-test-progress-inner" [style.width]="((score+1)/30*100)+'%'"></div>
+  </div>
+  <div class="color-test-progress-num">{{ score + 1 }}/30</div>
+</div> 

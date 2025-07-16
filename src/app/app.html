@@ -1,0 +1,32 @@
+<nav class="main-nav">
+  <a class="nav-link" routerLink="/">首页</a>
+</nav>
+<router-outlet></router-outlet>
+<canvas class="kk-mouse-canvas"></canvas>
+<svg width="0" height="0" class="liquid-glow-svg">
+  <filter id="liquid-glow">
+    <feTurbulence id="turb" type="turbulence" baseFrequency="0.18 0.22" numOctaves="2" seed="2" result="turb"/>
+    <feDisplacementMap in2="turb" in="SourceGraphic" scale="60" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+<div *ngIf="isHomePage()">
+  <!-- Kuakua 首页仿制版 -->
+  <div class="kk-container">
+    <header class="kk-header">
+      <img src="assets/kuakua-logo.png" alt="夸夸Logo" class="kk-logo" />
+      <h1>夸夸生成器</h1>
+      <p class="kk-desc">每天都要被温柔以待</p>
+    </header>
+    <main class="kk-main">
+      <div class="kk-card">
+        <div class="kk-quote">{{ quote }}</div>
+        <button class="kk-btn" (click)="generateQuote()">再夸一句</button>
+      </div>
+    </main>
+    <footer class="kk-footer">
+      <span>© 2024 Kuakua.app 仿制版 | 由 Angular 驱动</span>
+    </footer>
+  </div>
+</div>
+
+
