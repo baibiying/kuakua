@@ -5,12 +5,15 @@
     <div class="match3-row" *ngFor="let row of board; let r = index">
       <div class="match3-cell"
            *ngFor="let cell of row; let c = index"
-           (mousedown)="onCellMouseDown($event, r, c)"
-           (mouseenter)="onCellMouseEnter(r, c)"
+           [class.inactive]="!cell.isActive"
+           (mousedown)="cell.isActive && onCellMouseDown($event, r, c)"
+           (mouseenter)="cell.isActive && onCellMouseEnter(r, c)"
            [class.selected]="cell.selected">
-        <span [style.opacity]="dragging && dragFrom && dragFrom.row === r && dragFrom.col === c ? 0.2 : 1">
-          {{ animalList[cell.animal] }}
-        </span>
+        <ng-container *ngIf="cell.isActive">
+          <span [style.opacity]="dragging && dragFrom && dragFrom.row === r && dragFrom.col === c ? 0.2 : 1">
+            {{ animalList[cell.animal] }}
+          </span>
+        </ng-container>
       </div>
     </div>
   </div>

@@ -21,15 +21,19 @@
   margin-bottom: 18px;
 }
 .match3-board {
-  background: #22334a;
-  border-radius: 18px;
-  padding: 16px;
+  background: transparent;
+  width: 100%;
+  max-width: 480px;
   display: grid;
   grid-template-columns: repeat(8, 44px);
   grid-template-rows: repeat(8, 44px);
   gap: 6px;
   justify-content: center;
   align-items: center;
+  border-radius: 18px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
 }
 .match3-row {
   display: contents;
@@ -37,6 +41,7 @@
 .match3-cell {
   width: 44px;
   height: 44px;
+  background: #22334a;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -76,4 +81,10 @@
   transform: translate(-50%, -50%);
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.18));
   user-select: none;
+}
+.match3-cell.inactive {
+  background: transparent !important;
+  border: none !important;
+  cursor: default !important;
+  box-shadow: none !important;
 } 
