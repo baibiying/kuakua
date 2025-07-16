@@ -54,9 +54,9 @@ export class GamesComponent {
       comingSoon: false
     },
     {
-      title: '夸夸点击',
-      desc: '每点击一次按钮，都会收到一句夸夸！',
-      icon: '👏',
+      title: '消消乐',
+      desc: '交换相邻动物头像，三个及以上相同即可消除，挑战高分！',
+      icon: '🧩',
       link: '/games/clicking',
       comingSoon: false
     },

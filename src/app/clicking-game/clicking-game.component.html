@@ -1,7 +1,21 @@
-<div class="clicking-container">
-  <h2 class="clicking-title">夸夸点击</h2>
-  <div class="clicking-number">{{ count }}</div>
-  <div class="clicking-compliment">{{ compliment }}</div>
-  <button class="clicking-btn" (click)="increment()">点击我</button>
-  <button class="clicking-reset" (click)="reset()">重置</button>
+<div class="match3-container">
+  <h2 class="match3-title">消消乐</h2>
+  <div class="match3-score">分数：{{ score }}</div>
+  <div class="match3-board">
+    <div class="match3-row" *ngFor="let row of board; let r = index">
+      <div class="match3-cell"
+           *ngFor="let cell of row; let c = index"
+           (mousedown)="onCellMouseDown($event, r, c)"
+           (mouseenter)="onCellMouseEnter(r, c)"
+           [class.selected]="cell.selected">
+        <span [style.opacity]="dragging && dragFrom && dragFrom.row === r && dragFrom.col === c ? 0.2 : 1">
+          {{ animalList[cell.animal] }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="dragging && dragAnimal && dragPos" class="drag-ghost" [ngStyle]="{ left: dragPos.x + 'px', top: dragPos.y + 'px' }">
+    {{ dragAnimal }}
+  </div>
+  <button class="match3-reset" (click)="reset()">重置</button>
 </div> 
